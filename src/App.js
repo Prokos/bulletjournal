@@ -18,17 +18,19 @@ const App = () => {
 
 	return (
 		<React.Fragment>
-			{/* <Backlog /> */}
-			{/* <WatchList /> */}
-			{/* <ReadingList /> */}
+			{/* General one-time */}
+			<Backlog />
+			<WatchList />
+			<ReadingList />
 			<GamesList />
-			{/* <MonthlyOverview year={year} month={month} />
+			{/* Monthly */}
+			<MonthlyOverview year={year} month={month} />
 			<HabitTracker year={year} month={month} />
 			<MealTracker year={year} month={month} />
 			<BrainDump year={year} month={month} />
 			<MonthlyLog year={year} month={month} />
 			<DailyLog year={year} month={month} />
-			<MonthlyReview year={year} month={month} /> */}
+			<MonthlyReview year={year} month={month} />
 		</React.Fragment>
 	);
 };
