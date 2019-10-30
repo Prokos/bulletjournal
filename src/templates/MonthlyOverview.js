@@ -34,9 +34,8 @@ const DayNum = styled.div`
 	border-right: 2px dotted #aaa;
 `;
 
-function App() {
-	const year = 2019;
-	const month = 11;
+const MonthlyOverview = props => {
+	const { year, month } = props;
 
 	const now = moment().year(year).month(month);
 
@@ -62,4 +61,4 @@ function App() {
 	);
 }
 
-export default App;
+export default MonthlyOverview;

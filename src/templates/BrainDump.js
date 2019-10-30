@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import Container from '../components/Container';
 import Title from '../components/Title';
-import SubtitleInline from '../components/SubtitleInline';
+import Subtitle from '../components/Subtitle';
 
 const Line = styled.div`
 	width: 100%;
@@ -24,7 +24,8 @@ const BrainDump = () => {
 
 	return (
 		<Container>
-			<Title>Brain Dump <SubtitleInline>{now.format('MMMM')} {year}</SubtitleInline></Title>
+			<Subtitle>{now.format('MMMM')} {year}</Subtitle>
+			<Title>Brain Dump</Title>
 			{lines}
 		</Container>
 	);

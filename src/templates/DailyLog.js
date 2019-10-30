@@ -68,9 +68,8 @@ const Log = styled.div`
 `;
 
 const daysPerPage = 4;
-const DailyLog = () => {
-	const year = 2019;
-	const month = 10;
+const DailyLog = props => {
+	const { year, month } = props;
 
 	const components = [];
 

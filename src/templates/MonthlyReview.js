@@ -12,9 +12,9 @@ const Line = styled.div`
 	border-bottom: 1px dashed #eee;
 `;
 
-const MonthlyReview = () => {
-	const year = 2019;
-	const month = 10;
+const MonthlyReview = props => {
+	const { year, month } = props;
+
 	const now = moment().year(year).month(month);
 
 	const lines = [];

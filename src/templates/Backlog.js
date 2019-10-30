@@ -1,12 +1,11 @@
 import React from 'react';
-import moment from 'moment';
 import styled from 'styled-components';
 
 import Container from '../components/Container';
 import Title from '../components/Title';
-import SubtitleInline from '../components/SubtitleInline';
 
 const Line = styled.div`
+	position: relative;
 	width: 100%;
 	padding: 1em;
 	border-bottom: 1px dashed #eee;
@@ -14,9 +13,9 @@ const Line = styled.div`
 
 const Grid = styled.div`
 	display: grid;
-	grid-template-columns: auto auto;
+	grid-template-columns: 60% 20% 20%;
 	grid-template-rows: auto auto;
-	grid-gap: 2em;
+	grid-gap: .5em;
 `;
 
 const Quadrant = styled.div`
@@ -29,37 +28,44 @@ const Quadrant = styled.div`
 const QuadrantTitle = styled.div`
 	font-weight: bold;
 	font-size: 1.em;
+	margin-bottom: 10px;
 `;
 
-const MonthlyLog = props => {
-	const { year, month } = props;
+const Check = styled.div`
+	border: 2px solid #ccc;
+	height: 1em;
+	width: 1em;
+	background: #fff;
+	position: absolute;
+	top: 8px;
+	left: 0;
+`;
 
-	const now = moment().year(year).month(month);
-
+const Backlog = () => {
 	const lines = [];
-	for (let i = 0;i < 8;i++) {
+	for (let i = 0;i < 28;i++) {
 		lines.push(<Line />);
 	}
 
-	const linesLong = [];
-	for (let i = 0;i < 18;i++) {
-		linesLong.push(<Line />);
+	const linesWithCheck = [];
+	for (let i = 0;i < 28;i++) {
+		linesWithCheck.push(<Line><Check /></Line>);
 	}
 
 	return (
 		<Container>
-			<Title>Monthly Log <SubtitleInline>{now.format('MMMM')} {year}</SubtitleInline></Title>
+			<Title>Backlog</Title>
 			<Grid>
 				<Quadrant>
-					<QuadrantTitle>Todo</QuadrantTitle>
-					{linesLong}
+					<QuadrantTitle>Description</QuadrantTitle>
+					{linesWithCheck}
 				</Quadrant>
 				<Quadrant>
-					<QuadrantTitle>Spending</QuadrantTitle>
-					{linesLong}
+					<QuadrantTitle>Added on</QuadrantTitle>
+					{lines}
 				</Quadrant>
-				<Quadrant start={1} end={2}>
-					<QuadrantTitle>Goals</QuadrantTitle>
+				<Quadrant>
+					<QuadrantTitle>Completed on</QuadrantTitle>
 					{lines}
 				</Quadrant>
 			</Grid>
@@ -67,4 +73,4 @@ const MonthlyLog = props => {
 	);
 }
 
-export default MonthlyLog;
+export default Backlog;

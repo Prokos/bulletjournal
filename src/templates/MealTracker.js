@@ -75,9 +75,8 @@ const Habit = styled.div`
 	background: #fff;
 `;
 
-function MealTracker() {
-	const year = 2019;
-	const month = 10;
+const MealTracker = props => {
+	const { year, month } = props;
 
 	const now = moment().year(year).month(month);
 
