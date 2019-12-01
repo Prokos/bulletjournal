@@ -12,9 +12,8 @@ const Line = styled.div`
 	border-bottom: 1px dashed #eee;
 `;
 
-const BrainDump = () => {
-	const year = 2019;
-	const month = 10;
+const BrainDump = props => {
+	const { month, year } = props;
 	const now = moment().year(year).month(month);
 
 	const lines = [];
@@ -24,8 +23,8 @@ const BrainDump = () => {
 
 	return (
 		<Container>
-			<Subtitle>{now.format('MMMM')} {year}</Subtitle>
 			<Title>Brain Dump</Title>
+			<Subtitle>{now.format('MMMM')} {year}</Subtitle>
 			{lines}
 		</Container>
 	);

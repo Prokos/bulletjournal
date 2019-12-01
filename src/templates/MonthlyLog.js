@@ -55,10 +55,6 @@ const MonthlyLog = props => {
 					{linesLong}
 				</Quadrant>
 				<Quadrant>
-					<QuadrantTitle>Spending</QuadrantTitle>
-					{linesLong}
-				</Quadrant>
-				<Quadrant start={1} end={2}>
 					<QuadrantTitle>Goals</QuadrantTitle>
 					{lines}
 				</Quadrant>

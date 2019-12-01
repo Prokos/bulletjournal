@@ -13,16 +13,16 @@ import ReadingList from './templates/ReadingList';
 import GamesList from './templates/GamesList';
 
 const App = () => {
-	const year = 2019;
-	const month = 11;
+	const year = 2020;
+	const month = 0;
 
 	return (
 		<React.Fragment>
 			{/* General one-time */}
-			<Backlog />
+			{/* <Backlog />
 			<WatchList />
 			<ReadingList />
-			<GamesList />
+			<GamesList /> */}
 			{/* Monthly */}
 			<MonthlyOverview year={year} month={month} />
 			<HabitTracker year={year} month={month} />

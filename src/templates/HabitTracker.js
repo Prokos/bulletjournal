@@ -73,11 +73,15 @@ const HabitTracker = props => {
 	const habits = [
 		'draw',
 		'no smoke',
+		'no weed',
 		'read',
 		'meditate',
 		'no candy',
 		'exercise',
-		'dev'
+		'dev',
+		'cleaning',
+		'video games',
+		'focus wakeup'
 	];
 
 	const monthRows = [];
